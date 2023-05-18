@@ -333,15 +333,15 @@
         // diffrent stle for filling the children nodes 
         //.style("fill", function (d) { return d.data.habitat === "Near Water" ? water.url() : land.url(); })
         // .style("fill", function (d) { return d.children ? "red" : (d.data.habitat === "Near Water" ? water.url() : land.url()); })
-        .style("fill", function (d) { return d.children ? null : (d.data.habitat === "Near Water" ? water.url() : land.url()); })
+        //.style("fill", function (d) { return d.children ? null : (d.data.habitat === "Near Water" ? water.url() : land.url()); })
 
         // The specification does not clearly mention the type of visual encoding required, so I have two available options below. 
         /*
         If you want to add color for parent nodes please uncomment this code below
         */
-        // .style("fill", function (d) {
-        //   return d.children ? colorScaleNode(d.data.name) : (d.data.habitat === "Near Water" ? water.url() : land.url());
-        // })
+         .style("fill", function (d) {
+         return d.children ? colorScaleNode(d.data.name) : (d.data.habitat === "Near Water" ? water.url() : land.url());
+         })
 
         /*
         If you want to add just texture to parent nodes please uncomment this code below
